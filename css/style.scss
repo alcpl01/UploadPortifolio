@@ -1,0 +1,134 @@
+
+/*Cabeçalho*/
+header{
+    width: 100%;
+    background-color: #E98000; /*cor do cabeçalho*/
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    z-index: 999; /*Faz com que essa camada seja a principal, acima de todos os elementos*/
+    padding-left: 20px;
+    left: 0px;
+}
+
+.navbar{
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    font-family:courier, courier new, serif;
+    font-size: 18px;
+    color: #fff;
+}
+
+.logo{
+    margin-left: -150px;
+    
+    a{
+        color: #fff;
+        text-decoration: none;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        left: 50%;
+        
+    }
+}
+
+.hamburguer{ /*Criação do menu hamburguer, alterar display none pra block*/
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border-radius: 5px;
+    border: 0;
+    position: relative;
+    cursor: pointer;
+    display: none;
+}
+
+.hamburguer:after{
+    content: "";
+    position: absolute;
+    top: 35%;
+    left: 2%;
+    width: 70%;
+    height: 5%;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.hamburguer:before{
+    content: "";
+    position: absolute;
+    top: 55%;
+    left: 2%;
+    width: 70%;
+    height: 5%;
+    border-radius: 5px;
+    background-color: #fff;
+} /*Fim do menu hamburgue*/
+
+.menu{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    li{
+        margin-left: 10px;
+        a{
+            display: block;
+            padding: 10px 15px;
+            text-decoration: none;
+            color: #fff;
+            transition: 0.5s ease;
+            &:hover{
+                color:rgb(175, 174, 174);;
+            }
+        }
+
+    }
+}
+
+@media screen and (max-width:980px){
+    .hamburguer{
+        display: block;
+        z-index: 999;
+        
+    }
+
+    .menu{
+        position: fixed;
+        top: 0;
+        right:-1000px;
+
+        height: 100vh;
+        background-color: #a05b06;
+        margin: 0;
+
+        flex-direction: column;
+
+        padding: 100px 20px;
+
+        max-width: 250px;
+        width: 100%;
+    }
+    .menu.active{
+        right: 0;
+    }
+}
+
+.img1{
+    width: 50%;
+    position: absolute;
+    left: 0px;
+    width: 1920px;
+    height: 900px;
+    
+}
+
+@media screen and (max-width:1463px){
+    .logo{
+        margin-left: 65px;
+    }
+}
